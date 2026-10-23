@@ -1,14 +1,20 @@
+import { redirectAlert } from "./alerts.js"
+import { buscarUsuario } from "./data.js"
+
 function iniciarSesion() {
     let correo = document.querySelector("#correo").value
     let clave = document.querySelector("#clave").value
-    if (correo == "correo@correo.com" || clave == "12345") {
-        alert("Bienvenido al sistema...")
-        window.location.href = "/pages/catalogo.html"
+    let usuario = buscarUsuario(correo, clave)
+    if (usuario) {
+        redirectAlert("Bienvenido al sistema" + usuario.nombre, "success", "/pages/catalogo.html")
     } else {
-        alert("Error de credenciales...")
+        redirectAlert("Error de credenciales", "error", "/index.html")
     }
 }
 
 let btn_login = document.querySelector("#btn-login")
 
 btn_login.addEventListener("click", iniciarSesion)
+
+
+
