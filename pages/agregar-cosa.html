@@ -12,7 +12,7 @@
   <aside class="top-notice">
     <div class="container top-notice-inner">
       <span>PANEL DE PUBLICACIÓN — AGREGA PIEZAS A NUESTRA SELECCIÓN</span>
-      <span>KOSAS STUDIO 2026</span>
+      <span id="nombre-usuario"></span>
     </div>
   </aside>
 
@@ -61,7 +61,7 @@
             </div>
           </div>
 
-          <form action="catalogo.html" method="GET">
+          <form>
             
             <div class="form-grid-2">
               <div class="form-group">
@@ -163,7 +163,7 @@
             </div>
 
             <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap; margin-top: var(--space-lg);">
-              <button type="submit" class="btn btn-primary" style="flex: 1; padding: 0.95rem;">
+              <button id="btn-registrar-cosa" type="button" class="btn btn-primary" style="flex: 1; padding: 0.95rem;">
                 Publicar Cosa en el Catálogo
               </button>
               <a href="catalogo.html" class="btn" style="background-color: var(--color-surface-muted);">
@@ -228,6 +228,6 @@
       </div>
     </div>
   </footer>
-
+  <script type="module" src="../js/cosas-controller.js"></script>
 </body>
 </html>
