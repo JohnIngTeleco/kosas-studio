@@ -1,4 +1,4 @@
-import { setLocalStorage } from "./local-storage.js";
+import { getLocalStorage, setLocalStorage } from "./local-storage.js";
 
 let usuarios = [
   {
@@ -24,7 +24,7 @@ let usuarios = [
   },
 ];
 
-let cosas = []
+export let cosas = getLocalStorage("cosas") || [] 
 
 export function buscarUsuario(correo, clave) {
   let auth = usuarios.find((usuario) => correo == usuario.correo && clave == usuario.contrasena);
