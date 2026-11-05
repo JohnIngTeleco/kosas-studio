@@ -1,4 +1,4 @@
-import { getLocalStorage } from "./local-storage.js";
+import { getLocalStorage, removeLocalStorage } from "./local-storage.js";
 import { cosas, registrarCosa } from "./data.js";
 import { redirectAlert } from "./alerts.js";
 import { idGenerator, templateCardCosa } from "./generators.js";
