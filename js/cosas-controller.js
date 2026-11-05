@@ -1,7 +1,7 @@
 import { getLocalStorage } from "./local-storage.js";
 import { cosas, registrarCosa } from "./data.js";
 import { redirectAlert } from "./alerts.js";
-import { idGenerator } from "./generators.js";
+import { idGenerator, templateCardCosa } from "./generators.js";
 
 let usuario = getLocalStorage("usuario") || "N/A"
 document.querySelector("#nombre-usuario").textContent = usuario.nombre
@@ -25,4 +25,12 @@ function crearCosa() {
 let btn_registrar_cosa = document.querySelector("#btn-registrar-cosa")
 if (btn_registrar_cosa) {
     btn_registrar_cosa.addEventListener("click", crearCosa)
+}
+
+let catalogo = document.querySelector("#catalogo")
+if (catalogo) {
+    let n_cosas = getLocalStorage("cosas") || []
+    n_cosas.map((cosa) => {
+        catalogo.innerHTML += templateCardCosa(cosa)
+    })
 }
