@@ -34,3 +34,13 @@ if (catalogo) {
         catalogo.innerHTML += templateCardCosa(cosa)
     })
 }
+
+function cerrarSesion() {
+    removeLocalStorage("usuario")
+    redirectAlert("Cerrando sesion", "info", "/index.html")
+}
+
+let btn_cerar_sesion = document.querySelector("#btn-cerrar-sesion")
+if (btn_cerar_sesion) {
+    btn_cerar_sesion.addEventListener("click", cerrarSesion)
+}
